@@ -1,4 +1,4 @@
-#!/usr/bin/env python2
+#!/usr/bin/env python
 """
 Convert an 0407 binary into an 0405 binary, under the assumption
 that the code starts at 040014 (by ".. = 40014").
@@ -27,5 +27,5 @@ def write(fn, d) :
 
 d1 = words(read('a.out'))
 hdr = d1[:8]
-d = [0405, 12+hdr[1], 0, 0, hdr[4], 0] + d1[8:]
+d = [0o405, 12+hdr[1], 0, 0, hdr[4], 0] + d1[8:]
 write("a.out", unwords(d))
